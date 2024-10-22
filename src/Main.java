@@ -62,8 +62,8 @@ public class Main {
 
         //#region Cycling the rest of the LPC tables
         for(int n = 0; n < size - 1; n++){
-            int min = C[first - 1];
-            int minI = first - 1;
+            int min = 1000;
+            int minI = -5;
             for(int j = 0; j < size; j++){
                 if(L[j] == 0 && min > C[j]){
                     min = C[j];
@@ -74,7 +74,7 @@ public class Main {
                 if(L[j] == 0) {
                     int pC = min + table[minI][j];
                     if (pC < C[j]){
-                        P[j] = minI;
+                        P[j] = minI + 1;
                         C[j] = pC;
                     }
                 }
